@@ -1,0 +1,6 @@
+api_stuff.txt
+.DS_store
+.ipynb_checkpoints
+__pychache__
+*.py[cod]
+*.py.class
