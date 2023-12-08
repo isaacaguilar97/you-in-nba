@@ -1,6 +1,13 @@
 **PROJECT DESCRIPTION**
 The purpose of this project is to create a Dashboard in Streamlit that helps anyone interested in improving their basketball skills, know where to focus their training based on their heigth, weight, and current skills compared to the 2023 NBA players.
 
+**CONTENT**
+NBA_project.ipynb: Where all the code resides
+feedback: Folder with text files containg peer feedback to improve the project process
+data: Folder with tables containing saved data from API
+.gitignore: files I don't want to show up in my repository
+
+
 **DATA SUMMARY**
 Season: 2023
 NBA teams: 11
@@ -39,3 +46,7 @@ Restrictions: There is a limit of 100 queries per day for the free version of th
 - Turnovers: The number of times a player loses possession of the ball to the opposing team.
 - Blocks: The number of times a player deflects or stops a field goal attempt by an opponent.
 - PlusMinus: The point differential when a player is on the court. It represents the difference between the points scored by the player's team and the points scored by the opposing team while the player is in the game.
+
+**BLOGPOSTS**
+Data Collection and Cleaning
+Exploratory Data Analysis
