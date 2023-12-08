@@ -1,0 +1,33 @@
+Braimstorm potential topics and related questions:
+
+- Use NBA data (thorugh API) to determine based on a given weight and height, what basketball skills that person should have to be an above average NBA player.
+- Webscrape food recipe websites to determine the cheapest and fastest meals.
+- Use Youtube API to determine what makes a video viral (To be honest I am not sure how I do this one, but it was an idea).
+
+This is the feedback that I got:
+
+Bethany Blake:
+I think scraping the food recipes is interesting, maybe just because I haven't heard anyone else mention this idea. 
+Do you know how you want to execute this one? I'm not sure how you'd determine cheapest recipes in straightforward way unless you're scraping a list of cheap recipes.
+The YouTube API is very accessible and has a lot of online resources to use if you decide to go that direction
+
+After replying to her she said:
+It would be beyond cool if you did an algorithm to calculate a budget for each recipe. 
+It's tricky because there's the grocery budget of buying the items but the actual cost of the meal is how much of each item you use. 
+If you convert measurements to ounces and break cost of each item down by oz, it's doable.
+Fastest recipes would be easy since most recipes list cooking and prep times. Maybe you could do "simplest" recipes by comparing number of ingredients and steps? 
+Let me know if you need a sounding board whichever project you go with.
+
+Aaron Oustrich:
+This was a conversation I had with him. He said the Basketball idea was original even though others were doing other questions in the same field.
+He said it could be a topic of interest to many people that wanted to improve their basketball skills but didn't knwo where to focus.
+
+Samantha McDonald:
+After sharing my ideas with her she mentioned I should do something that I enjoy. 
+Doing that I would help me do my best and do a better job than if I would do something of interest to others but not to me. 
+
+Conlcusion:
+I really liked all the comments I received from my teammates. After considering their recommendations I received, I decided to choose the NBA data to answer the question "what basketball skills should a person have to be an above average NBA player depending on their height and weight?"
+That way I am doing something that I like, while answering a questions that is of interest for people of that field. 
+The gathering of the data for the other projects would've requrie more time and research, so that was another reason to go with the basketball question since the NBA data is available in many different APIs.
+
