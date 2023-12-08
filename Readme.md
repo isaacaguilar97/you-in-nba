@@ -1,22 +1,22 @@
-**PROJECT DESCRIPTION**  
+## PROJECT DESCRIPTION  
 The purpose of this project is to create a Dashboard in Streamlit that helps anyone interested in improving their basketball skills, know where to focus their training based on their heigth, weight, and current skills compared to the 2023 NBA players.  
 
-**CONTENT**  
+ ## CONTENT  
 NBA_project.ipynb: Where all the code resides  
 feedback: Folder with text files containg peer feedback to improve the project process  
 data: Folder with tables containing saved data from API  
 .gitignore: files I don't want to show up in my repository  
 
 
-**DATA SUMMARY**  
-Season: 2023  
-NBA teams: 11  
-Number of Players: 30  
-Columns: 32  
-API: "https://api-nba-v1.p.rapidapi.com/"  
-Restrictions: There is a limit of 100 queries per day for the free version of the API. I formated the script so we could add more players and teams to the final_table.csv  
+## DATA SUMMARY  
+**Season:** 2023  
+**NBA teams:** 11  
+**Number of Players:** 30  
+**Columns:** 32  
+**API:** "https://api-nba-v1.p.rapidapi.com/"  
+**Restrictions:** There is a limit of 100 queries per day for the free version of the API. I formated the script so we could add more players and teams to the final_table.csv  
 
-**Helpful Descriptions**  
+## Helpful Descriptions  
 *POSITIONS*  
 - PG - Point Guard: The primary ball handler, responsible for setting up plays and often the smallest player on the team.
 - SG - Shooting Guard: Often a strong scorer and perimeter shooter. May also be involved in bringing the ball up the court.
@@ -47,6 +47,6 @@ Restrictions: There is a limit of 100 queries per day for the free version of th
 - Blocks: The number of times a player deflects or stops a field goal attempt by an opponent.
 - PlusMinus: The point differential when a player is on the court. It represents the difference between the points scored by the player's team and the points scored by the opposing team while the player is in the game.
 
-**BLOGPOSTS**  
+## BLOGPOSTS  
 Data Collection and Cleaning  
 Exploratory Data Analysis  
