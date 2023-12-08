@@ -13,7 +13,7 @@ data: Folder with tables containing saved data from API
 **NBA teams:** 11  
 **Number of Players:** 30  
 **Columns:** 32  
-**API:** "https://api-nba-v1.p.rapidapi.com/"  
+**API:** "https://rapidapi.com/api-sports/api/api-basketball/"  
 **Restrictions:** There is a limit of 100 queries per day for the free version of the API. I formated the script so we could add more players and teams to the final_table.csv  
 
 ## Helpful Descriptions  
