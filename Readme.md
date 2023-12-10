@@ -1,5 +1,5 @@
 ## PROJECT DESCRIPTION  
-The purpose of this project is to create a Dashboard in Streamlit that helps anyone interested in improving their basketball skills, know where to focus their training based on their heigth, weight, and current skills compared to the 2023 NBA players.  
+The purpose of this project is to create a Dashboard in Streamlit that helps anyone interested in improving their basketball skills, know where to focus their training based on their height, weight, and current skills compared to the 2023 NBA players.  
 
  ## CONTENT  
 NBA_project.ipynb: Where all the code resides  
@@ -13,7 +13,7 @@ data: Folder with tables containing saved data from API
 **NBA teams:** 11  
 **Number of Players:** 30  
 **Columns:** 32  
-**API:** "https://rapidapi.com/api-sports/api/api-basketball/"  
+**API:** "https://rapidapi.com/api-sports/api/api-nba"  
 **Restrictions:** There is a limit of 100 queries per day for the free version of the API. I formated the script so we could add more players and teams to the final_table.csv  
 
 ## Helpful Descriptions  
