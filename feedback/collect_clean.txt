@@ -1,0 +1,13 @@
+After posting my Blog, this are the comments that I got:
+
+Carson:
+Hey Isaac, here is some feedback for your data set creation post:
+- I like how you explained the benefits and limitations of your api, made it easy to follow and understand your dataset
+- It is called JSON not JASON
+- I like your inclusion of visuals and code blocks. also you commented your code which is great
+- I wish I had more constructive advice for you but I think this is a stellar blog post. Not much else I could think of to change.
+
+Garrett Springer:
+This looks great! I liked how you did some very simple eda to figure out what the data looked like before you even made your dashboard.
+
+# Need one more...
