@@ -10,4 +10,11 @@ Hey Isaac, here is some feedback for your data set creation post:
 Garrett Springer:
 This looks great! I liked how you did some very simple eda to figure out what the data looked like before you even made your dashboard.
 
-# Need one more...
+Aaron Brown:
+Hey Isaac!
+I have to agree, I think this is an awesome post—great hook before you dive in and the topic is very fascinating. The organization of the post in general is also super well done. My one suggestion would be to look at the last paragraph—there are just some simple grammatical errors like "This was a time consuming," with the extra "a", but other than that I think it's fantastic!
+
+Highlighted Improvements:
+With the feedback that I was given, I proofread my article again and just made the grammatical and spelling changes I was suggested.
+
+SHA number for first draft commit: 60a35dc4ce3e08644fb4b5a3fa97fc7d688d2e0b

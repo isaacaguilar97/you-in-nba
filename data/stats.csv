@@ -18,7 +18,7 @@ id,name,team,pos,game,points,min,fgm,fga,fgp,ftm,fta,ftp,tpm,tpa,tpp,offReb,defR
 264,Reggie Jackson,DEN,PG,25,13,25,5,11,0.49,1,1,0.29,2,4,0.43,0,2,2,4,2,1,2,0,1,average,0.33,tpp,turnovers
 279,Nikola Jokic,DEN,C,24,27,32,11,19,0.58,4,6,0.7,1,4,0.32,3,9,12,9,3,1,3,1,7,high,0.0,assists,turnovers
 281,Damian Jones,CLE,C,14,2,8,1,1,0.3,1,1,0.11,0,0,0.0,1,1,2,0,1,0,1,0,-1,average,0.67,totReb,tpp
-283,Derrick Jones Jr.,DAL,SF,21,9,22,3,7,0.44,1,1,0.42,2,4,0.36,1,2,3,1,1,1,1,1,0,average,0.67,steals,assists
+283,Derrick Jones Jr.,DAL,SF,21,9,22,3,7,0.44,1,1,0.42,2,4,0.36,1,2,3,1,1,1,1,1,0,average,0.67,tpp,assists
 286,DeAndre Jordan,DEN,C,1,5,14,2,3,0.61,1,3,0.11,0,0,0.0,1,3,4,2,2,1,1,0,-5,low,0.67,fgp,pFouls
 287,Cory Joseph,GSW,PG,1,2,12,1,3,0.2,0,1,0.25,0,2,0.15,0,1,1,2,1,0,0,0,1,average,1.0,assists,fgp
 308,Zach LaVine,CHI,SG,1,20,34,7,16,0.44,3,4,0.67,2,7,0.31,0,4,5,3,2,1,2,0,-4,low,0.33,ftp,turnovers
@@ -78,3 +78,23 @@ id,name,team,pos,game,points,min,fgm,fga,fgp,ftm,fta,ftp,tpm,tpa,tpp,offReb,defR
 3081,Carlik Jones,CHI,G,4,2,11,1,4,0.15,0,0,0.12,0,2,0.06,0,1,1,2,0,0,0,0,-3,low,,assists,fgp
 3091,Braxton Key,DEN,F,11,3,8,1,2,0.2,1,1,0.35,0,1,0.0,0,1,2,1,1,0,1,0,0,average,,ftp,fgp
 3396,Xavier Moon,LAC,PG,4,9,20,4,10,0.39,0,0,0.0,1,4,0.35,1,2,4,3,1,0,1,0,-6,low,,tpp,ftp
+753,Thomas Bryant,MIA,C,21,6,14,2,4,0.59,1,2,0.51,0,0,0.0,1,3,4,1,1,0,1,0,-1,average,,fgp,tpp
+761,John Collins,UTA,PF,26,13,29,5,10,0.51,2,2,0.6,1,3,0.37,2,5,8,1,3,1,1,1,-7,low,,totReb,pFouls
+762,Zach Collins,SAS,PF,28,13,27,5,10,0.51,2,3,0.6,1,4,0.35,2,4,6,4,3,1,2,1,-4,low,,assists,pFouls
+765,Torrey Craig,CHI,SF,31,6,21,2,5,0.42,1,1,0.25,1,3,0.32,2,3,5,1,3,1,1,0,-4,low,,steals,pFouls
+776,De'Aaron Fox,SAC,PG,22,27,34,10,20,0.45,6,7,0.78,3,8,0.34,1,4,4,6,3,1,2,0,3,average,,assists,pFouls
+779,Markelle Fultz,ORL,PG,8,10,26,5,10,0.52,1,1,0.25,0,1,0.06,1,2,4,4,1,1,1,0,3,average,,assists,tpp
+791,Josh Hart,NYK,SG,26,8,27,3,7,0.47,1,1,0.31,1,3,0.4,1,5,6,3,2,1,1,0,3,average,,tpp,pFouls
+801,Jonathan Isaac,ORL,PF,20,6,13,2,5,0.38,1,2,0.51,1,2,0.22,1,3,4,0,1,1,1,1,4,high,,steals,assists
+814,Luke Kennard,MEM,SG,12,7,20,2,7,0.33,1,1,0.42,2,5,0.31,0,2,2,2,0,0,1,0,-2,average,,tpp,totReb
+817,Maxi Kleber,DAL,PF,7,3,17,1,3,0.29,1,2,0.36,1,2,0.15,1,3,4,1,1,0,1,0,-2,average,,totReb,fgp
+818,Furkan Korkmaz,PHI,SG,19,2,8,1,2,0.25,0,1,0.29,0,1,0.2,0,1,1,1,1,1,0,0,2,average,,steals,totReb
+819,Luke Kornet,BOS,C,21,4,13,2,2,0.63,1,1,0.35,0,0,0.0,1,2,3,1,1,0,1,1,-1,average,,fgp,tpp
+820,Kyle Kuzma,WAS,SF,26,23,30,9,19,0.49,3,4,0.64,2,6,0.37,1,5,6,4,2,0,2,1,-8,low,,assists,turnovers
+830,Lauri Markkanen,UTA,PF,21,22,30,8,15,0.5,4,5,0.72,3,7,0.39,2,6,8,1,2,1,1,1,-3,low,,totReb,pFouls
+840,Donovan Mitchell,CLE,SG,24,26,35,9,20,0.44,5,6,0.87,3,8,0.33,1,4,6,5,2,2,3,0,2,average,,steals,turnovers
+842,Malik Monk,SAC,SG,29,14,24,5,11,0.42,2,2,0.55,2,6,0.39,0,2,2,5,2,1,2,0,1,average,,assists,turnovers
+850,Frank Ntilikina,CHA,PG,4,3,16,1,6,0.2,0,0,0.0,0,3,0.13,0,1,2,3,1,1,1,0,-11,low,,steals,fgp
+851,Royce O'Neale,BKN,PF,28,8,27,3,7,0.39,0,1,0.2,2,6,0.37,1,4,5,3,3,1,1,1,2,average,,tpp,pFouls
+854,Cedi Osman,SAS,SF,29,8,19,3,7,0.45,1,1,0.3,1,4,0.36,0,2,3,2,2,0,1,0,-4,low,,tpp,pFouls
+882,Jayson Tatum,BOS,SF,27,26,36,9,19,0.48,5,7,0.77,3,8,0.35,1,8,9,4,2,1,3,0,8,high,,totReb,turnovers
