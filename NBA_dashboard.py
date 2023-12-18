@@ -110,7 +110,7 @@ def find_closest_height(df, target_height=1.77, tolerance=0.01):
         return upper_obs
 
 # Filter by height
-skills = find_closest_height(result_df, 2.2, tolerance=0.01)
+skills = find_closest_height(result_df, height, tolerance=0.01)
 
 # Remove height column and make table vertical
 skills = skills.drop('height_m', axis=1).T
