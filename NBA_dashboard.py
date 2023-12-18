@@ -62,7 +62,7 @@ st.markdown('Now that you have idenitfied what position you like the most, explo
 col3, col4 = st.columns(2)
 #pos2 = col3.selectbox("Role", final_df['pos'].unique().tolist())
 perf = col3.selectbox("Select Performance", final_df[final_df['pos'] == pos1]['performance'].unique().tolist())
-height = col4.number_input('Enter you Height in Meters')
+height = col4.slider('Select your height', min_value=1.5, max_value=2.2, value=1.75, step=0.01)
 
 
 # Filter position and performance
@@ -108,22 +108,19 @@ def find_closest_height(df, target_height=1.77, tolerance=0.01):
         return lower_obs
     else:
         return upper_obs
+    
+# Filter by height
+skills = find_closest_height(result_df, height, tolerance=0.01)
 
-if height == 0:
-    st.write('Enter your Height')
-else:
-    # Filter by height
-    skills = find_closest_height(result_df, height, tolerance=0.01)
+# Round up the values in the specified columns
+columns_to_round_up = ['points', 'min', 'totReb', 'assists', 'steals', 'blocks']
+skills[columns_to_round_up] = np.ceil(skills[columns_to_round_up])
 
-    # Round up the values in the specified columns
-    columns_to_round_up = ['points', 'min', 'totReb', 'assists', 'steals', 'blocks']
-    skills[columns_to_round_up] = np.ceil(skills[columns_to_round_up])
+# Remove height column and make table vertical
+skills = skills.drop('height_m', axis=1).T
 
-    # Remove height column and make table vertical
-    skills = skills.drop('height_m', axis=1).T
+# Rename column
+skills.rename(columns={skills.columns[0]: 'Average Value per Game'}, inplace=True)
 
-    # Rename column
-    skills.rename(columns={skills.columns[0]: 'Average Value per Game'}, inplace=True)
-
-    # Show table
-    st.dataframe(skills)
+# Show table
+st.dataframe(skills)
