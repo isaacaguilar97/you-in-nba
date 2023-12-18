@@ -1,0 +1,7 @@
+William:
+The blog post is good overall. However, it might need a grammar and spelling check before you submit it, and I think it would benefit from explanations of some of the abbreviations. 
+Also, the link to your dashboard in the blog post actually goes to the practice one we made in class.
+
+I was able to implement Williams feedback and resulted in a more profesional blog. I also would have been lost without the link to my actual Dashboard if it weren't for William.
+
+SHA Number: d4593042228a5529d1143633692c81d6ae1714e1
