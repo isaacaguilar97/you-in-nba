@@ -66,7 +66,7 @@ height = col4.number_input('Enter you Height in Meters')
 
 
 # Filter position and performance
-result_df = final_df[final_df['pos'] == pos2 & final_df['performance'] == perf]
+result_df = final_df[final_df['pos'] == pos1 & final_df['performance'] == perf]
 
 # Group by hieght
 result_df = final_df.groupby(['height_m']).agg({
@@ -83,7 +83,7 @@ result_df = final_df.groupby(['height_m']).agg({
 }).reset_index()
 
 # Function that find closest height and outputs a filtered table with that height
-def find_closest_height(df, target_height, tolerance=0.01):
+def find_closest_height(df, target_height=1.77, tolerance=0.01):
     # Check if the target height is present in the DataFrame
     if target_height in df['height_m'].values:
         return df[df['height_m'] == target_height]
@@ -121,3 +121,4 @@ skills.rename(columns={skills.columns[0]: 'Average Value per Game'}, inplace=Tru
 
 # Show table
 st.dataframe(skills)
+#
