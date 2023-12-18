@@ -59,10 +59,10 @@ st.header('What kind of NBA player would you be?')
 st.markdown('Now that you have idenitfied what position you like the most, explore the skills you would need to have based on that position, your desired perfomance and your height.')
 
 #Input
-col3, col4, col5 = st.columns(3)
-pos2 = col3.selectbox("Role", final_df['pos'].unique().tolist())
-perf = col4.selectbox("Select Performance", final_df[final_df['pos'] == pos2]['performance'].unique().tolist())
-height = col5.number_input('Enter you Height in Meters')
+col3, col4 = st.columns(2)
+#pos2 = col3.selectbox("Role", final_df['pos'].unique().tolist())
+perf = col3.selectbox("Select Performance", final_df[final_df['pos'] == pos1]['performance'].unique().tolist())
+height = col4.number_input('Enter you Height in Meters')
 
 
 # Filter position and performance
