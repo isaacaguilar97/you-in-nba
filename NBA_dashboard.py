@@ -11,7 +11,7 @@ final_df = pd.read_csv('data/final_table.csv')
 st.title('Your spot in the NBA')
 
 # Description
-st.text('Imagine you where an NBA player. What position would you like to be? What skills would you need to have based on your position and hieght. If you ever have wondered these questions or would like to just improve your game through some benchmarks that help you know what your skills should look like to be an above average baller, this app is for you. Hope you enjoy it.')
+st.markdown('Imagine you where an NBA player. What position would you like to be? What skills would you need to have based on your position and hieght. If you ever have wondered these questions or would like to just improve your game through some benchmarks that help you know what your skills should look like to be an above average baller, this app is for you. Hope you enjoy it.')
 
 # Warning message the results are comming from a sample of NBA players from 2023 season
 
@@ -26,7 +26,7 @@ pos1 = st.selectbox("Select Position", final_df['pos'].unique().tolist())
 strengths_df=final_df[final_df['pos'] == pos1]
 
 #Divide in to columns
-col1, col2 = st.columns(3, 1)
+col1, col2 = st.columns([3, 1])
 
 # Show barplot
 fig = px.histogram(strengths_df, x='b_strength', title='Point Forward', labels={'b_strength': '', 'count': 'Count'}, color_discrete_sequence=px.colors.qualitative.Set2)
@@ -38,13 +38,13 @@ Min = strengths_df['height_m'].min()
 Max = strengths_df['height_m'].max()
 col2.metric(label="Height Range:", value=f'{Min} - {Max}')
 # Average of Minutes played in a game
-col2.metric(label="Average minutes on the Court", value=round(final_df['min'].mean()))
+col2.metric(label="Average minutes on the Court", value=round(strengths_df['min'].mean()))
 
 # Header 2
 st.header('What kind of NBA player would you be?')
 
 # DESCRIPTION
-st.text('Now that you have idenitfied what position you like the most, explore the skills you would need to have based on that position, your desired perfomance and your height.')
+st.markdown('Now that you have idenitfied what position you like the most, explore the skills you would need to have based on that position, your desired perfomance and your height.')
 
 #Input
 col1, col2, col3 = st.columns(3)
