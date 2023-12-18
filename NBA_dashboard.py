@@ -182,4 +182,4 @@ with st.expander("Explore a little more"):
 # Final Words
 st.markdown('Hope you enjoyed this dashboard, and were able to learn a little more about NBA players and yourself. If you want to learn more about the code I used for this dashboard, you can got to my [GitHub Repository](https://github.com/isaacaguilar97/you-in-nba). You can also go to learn more about the Exploratory Data Analysis that helped me build this Dashboard with my article in my Blog called [My NBA Exploratory Data Analysis](https://isaacaguilar97.github.io/my-blog/My-NBA-Exploratory-Data-Analysis)')
 
-st.write('Thank you for exploring this Data with me. Now you know what it will take you to become an NBA player! :basketball:')
+st.write('Thank you for exploring this Data with me. Now you know what it will take you to become an NBA player! :basketball: You can do it!')
