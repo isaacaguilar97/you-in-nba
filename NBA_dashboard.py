@@ -60,7 +60,7 @@ st.markdown('Now that you have idenitfied what position you like the most, explo
 
 #Input
 col3, col4, col5 = st.columns(3)
-pos2 = col3.selectbox("Select Position", final_df['pos'].unique().tolist())
+pos2 = col3.selectbox("Select your Position", final_df['pos'].unique().tolist())
 perf = col4.selectbox("Select Performance", final_df[final_df['pos'] == pos2]['performance'].unique().tolist())
 height = col5.number_input('Enter you Height in Meters')
 
