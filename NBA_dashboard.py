@@ -108,19 +108,22 @@ def find_closest_height(df, target_height=1.77, tolerance=0.01):
         return lower_obs
     else:
         return upper_obs
-    
-# Filter by height
-skills = find_closest_height(result_df, height, tolerance=0.01)
 
-# Round up the values in the specified columns
-columns_to_round_up = ['points', 'min', 'totReb', 'assists', 'steals', 'blocks']
-skills[columns_to_round_up] = np.ceil(skills[columns_to_round_up])
+if height is None:
+    st.write('Enter your Height')
+else:
+    # Filter by height
+    skills = find_closest_height(result_df, height, tolerance=0.01)
 
-# Remove height column and make table vertical
-skills = skills.drop('height_m', axis=1).T
+    # Round up the values in the specified columns
+    columns_to_round_up = ['points', 'min', 'totReb', 'assists', 'steals', 'blocks']
+    skills[columns_to_round_up] = np.ceil(skills[columns_to_round_up])
 
-# Rename column
-skills.rename(columns={skills.columns[0]: 'Average Value per Game'}, inplace=True)
+    # Remove height column and make table vertical
+    skills = skills.drop('height_m', axis=1).T
 
-# Show table
-st.dataframe(skills)
+    # Rename column
+    skills.rename(columns={skills.columns[0]: 'Average Value per Game'}, inplace=True)
+
+    # Show table
+    st.dataframe(skills)
