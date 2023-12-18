@@ -22,25 +22,37 @@ st.header('Explore the Positions')
 pos1 = st.selectbox("Select Position", final_df['pos'].unique().tolist())
 # Have one selected by default or prompt to select one (Make it required)
 
+# Positions Dictionary
+p_n = {
+    'PF': 'Power Forward',
+    'SG': 'Shooting Guard',
+    'C': 'Center',
+    'PG': 'Point Guard',
+    'SF': 'Small Forward',
+    'F': 'Forward',
+    'G': 'Guard'
+}
+
 # Filter data
 strengths_df=final_df[final_df['pos'] == pos1]
 
-#Divide in to columns
-col1, col2 = st.columns([3, 1])
-
 # Show barplot
-fig = px.histogram(strengths_df, x='b_strength', title='Point Forward', labels={'b_strength': '', 'count': 'Count'}, color_discrete_sequence=px.colors.qualitative.Set2)
-col1.plotly_chart(fig)
+fig = px.histogram(strengths_df, x='b_strength', title=p_n[pos1], labels={'b_strength': '', 'count': 'Count'}, color_discrete_sequence=px.colors.qualitative.Set2)
+st.plotly_chart(fig)
+
+#Divide in to columns
+col1, col2 = st.columns(2)
 
 # Show metrics ##
 # Height Range
 Min = strengths_df['height_m'].min()
 Max = strengths_df['height_m'].max()
-col2.metric(label="Height Range:", value=f'{Min} - {Max}')
+col1.metric(label="Height Range in meters:", value=f'{Min} - {Max}')
 # Average of Minutes played in a game
 col2.metric(label="Average minutes on the Court", value=round(strengths_df['min'].mean()))
 
-# Header 2
+
+##### Header 2 #####
 st.header('What kind of NBA player would you be?')
 
 # DESCRIPTION
