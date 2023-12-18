@@ -109,7 +109,7 @@ def find_closest_height(df, target_height=1.77, tolerance=0.01):
     else:
         return upper_obs
 
-if height.empty:
+if height == 0:
     st.write('Enter your Height')
 else:
     # Filter by height
