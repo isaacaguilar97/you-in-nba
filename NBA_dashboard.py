@@ -112,6 +112,10 @@ def find_closest_height(df, target_height=1.77, tolerance=0.01):
 # Filter by height
 skills = find_closest_height(result_df, height, tolerance=0.01)
 
+# Round up the values in the specified columns
+columns_to_round_up = ['points', 'min', 'totReb', 'asists', 'steals', 'blocks']
+skills[columns_to_round_up] = np.ceil(skills[columns_to_round_up])
+
 # Remove height column and make table vertical
 skills = skills.drop('height_m', axis=1).T
 
