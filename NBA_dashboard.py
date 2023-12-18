@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import plotly.express as px
-from scipy.stats import mode
+import statistics
 
 # Load Data
 final_df = pd.read_csv('data/final_table.csv')
@@ -11,7 +11,9 @@ final_df = pd.read_csv('data/final_table.csv')
 st.title('Your spot in the NBA')
 
 # Description
-st.text('This is an example of what my description will look like once it has data inside of it. Lets go!')
+st.text('Imagine you where an NBA player. What position would you like to be? What skills would you need to have based on your position and hieght. If you ever have wondered these questions or would like to just improve your game through some benchmarks that help you know what your skills should look like to be an above average baller, this app is for you. Hope you enjoy it.')
+
+# Warning message the results are comming from a sample of NBA players from 2023 season
 
 # Header 1
 st.header('Explore the Positions')
@@ -42,13 +44,14 @@ col2.metric(label="Average minutes on the Court", value=round(final_df['min'].me
 st.header('What kind of NBA player would you be?')
 
 # DESCRIPTION
+st.text('Now that you have idenitfied what position you like the most, explore the skills you would need to have based on that position, your desired perfomance and your height.')
 
 #Input
 col1, col2, col3 = st.columns(3)
 pos2 = col1.selectbox("Select Position", final_df['pos'].unique().tolist())
 perf = col2.selectbox("Select Performance", final_df[final_df['pos'] == pos2]['performance'].unique().tolist())
 height = col3.number_input('Enter you Height in Meters')
-# Warning message to enter them from left to right
+
 
 # Filter position and performance
 result_df = final_df[final_df['pos'] == pos2 & final_df['performance'] == perf]
@@ -64,7 +67,7 @@ result_df = final_df.groupby(['height_m']).agg({
     'assists': 'mean',
     'steals': 'mean',
     'blocks': 'mean',
-    'b_strength': lambda x: mode(x).mode[0]
+    'b_strength': lambda x: statistics.mode(x).mode[0]
 }).reset_index()
 
 # Function that find closest height and outputs a filtered table with that height
