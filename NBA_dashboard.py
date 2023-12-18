@@ -66,7 +66,7 @@ height = col4.number_input('Enter you Height in Meters')
 
 
 # Filter position and performance
-result_df = final_df[final_df['pos'] == pos1 & final_df['performance'] == perf]
+result_df = final_df[(final_df['pos'] == pos1) & (final_df['performance'] == perf)]
 
 # Group by hieght
 result_df = final_df.groupby(['height_m']).agg({
