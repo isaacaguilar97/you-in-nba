@@ -19,7 +19,7 @@ st.markdown('Imagine you where an NBA player. What position would you like to be
 st.header('Explore the Positions')
 
 # Position Input
-pos1 = st.selectbox("Select Position", final_df['pos'].unique().tolist())
+pos1 = st.sidebar.selectbox("Select Position", final_df['pos'].unique().tolist())
 # Have one selected by default or prompt to select one (Make it required)
 
 # Positions Dictionary
