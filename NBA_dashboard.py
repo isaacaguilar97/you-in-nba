@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import plotly.express as px
+from scipy.stats import mode
 
 # Load Data
 final_df = pd.read_csv('data/final_table.csv')
@@ -22,26 +23,86 @@ pos1 = st.selectbox("Select Position", final_df['pos'].unique().tolist())
 # Filter data
 strengths_df=final_df[final_df['pos'] == pos1]
 
-# Show barplot
-fig = px.histogram(strengths_df, x='b_strength', title='Point Forward', labels={'b_strength': '', 'count': 'Count'})
-st.plotly_chart(fig)
+#Divide in to columns
+col1, col2 = st.columns(3, 1)
 
+# Show barplot
+fig = px.histogram(strengths_df, x='b_strength', title='Point Forward', labels={'b_strength': '', 'count': 'Count'}, color_discrete_sequence=px.colors.qualitative.Set2)
+col1.plotly_chart(fig)
+
+# Show metrics ##
 # Height Range
 Min = strengths_df['height_m'].min()
 Max = strengths_df['height_m'].max()
-col1, col2 = st.columns(2)
-col1.metric(label="Minumum Height", value=Min)
-col2.metric(label="Maximum Height", value=Max)
-
+col2.metric(label="Height Range:", value=f'{Min} - {Max}')
 # Average of Minutes played in a game
-st.write(f"The average of minutes on the court is: {round(final_df['min'].mean())}")
+col2.metric(label="Average minutes on the Court", value=round(final_df['min'].mean()))
 
-# Add position and stats descriptions at the left of the dashboard ###
+# Header 2
+st.header('What kind of NBA player would you be?')
 
+# DESCRIPTION
+
+#Input
 col1, col2, col3 = st.columns(3)
-height = col1.number_input('Enter you Height in Meters')
-pos2 = col2.selectbox("Select Position", final_df['pos'].unique().tolist())
-performance = col3.selectbox("Select Performance", final_df['performance'].unique().tolist())
+pos2 = col1.selectbox("Select Position", final_df['pos'].unique().tolist())
+perf = col2.selectbox("Select Performance", final_df[final_df['pos'] == pos2]['performance'].unique().tolist())
+height = col3.number_input('Enter you Height in Meters')
+# Warning message to enter them from left to right
 
-# Create Dataframe and display it
-#st.dataframe(top_names)
+# Filter position and performance
+result_df = final_df[final_df['pos'] == pos2 & final_df['performance'] == perf]
+
+# Group by hieght
+result_df = final_df.groupby(['height_m']).agg({
+    'points': 'mean',
+    'min': 'mean',
+    'fgp': 'mean',
+    'ftp': 'mean',
+    'tpp': 'mean',
+    'totReb': 'mean',
+    'assists': 'mean',
+    'steals': 'mean',
+    'blocks': 'mean',
+    'b_strength': lambda x: mode(x).mode[0]
+}).reset_index()
+
+# Function that find closest height and outputs a filtered table with that height
+def find_closest_height(df, target_height, tolerance=0.01):
+    # Check if the target height is present in the DataFrame
+    if target_height in df['height_m'].values:
+        return df[df['height_m'] == target_height]
+    
+    # If not, find the closest height within the specified tolerance
+    lower_height = target_height - tolerance
+    upper_height = target_height + tolerance
+    
+    # Check if there are observations for the lower and upper heights
+    lower_obs = df[(df['height_m'] >= lower_height) & (df['height_m'] <= target_height)]
+    upper_obs = df[(df['height_m'] <= upper_height) & (df['height_m'] >= target_height)]
+    
+    # If both lower and upper observations are empty, and target_height is greater than max height, handle it
+    if lower_obs.empty and upper_obs.empty:
+        max_height = df['height_m'].max()
+        if target_height > max_height:
+            return df[df['height_m'] == max_height]
+        else:
+            return find_closest_height(df, target_height + 0.01, tolerance)
+    
+    # If either lower or upper observations are not empty, return the one with observations
+    if not lower_obs.empty:
+        return lower_obs
+    else:
+        return upper_obs
+
+# Filter by height
+skills = find_closest_height(result_df, 2.2, tolerance=0.01)
+
+# Remove height column and make table vertical
+skills = skills.drop('height_m', axis=1).T
+
+# Rename column
+skills.rename(columns={skills.columns[0]: 'Average Value per Game'}, inplace=True)
+
+# Show table
+st.dataframe(skills)
