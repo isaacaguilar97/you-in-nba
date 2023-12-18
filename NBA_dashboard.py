@@ -126,4 +126,4 @@ else:
     skills.rename(columns={skills.columns[0]: 'Average Value per Game'}, inplace=True)
 
     # Show table
-    st.table(skills)
+    st.table(skills, width='100%')
