@@ -168,9 +168,10 @@ with st.expander("Explore a little more"):
     st.plotly_chart(fig2)
 
     # Biggest Strengths Distribution per Position
-    fig3 = px.histogram(final_df, x='height_m', color='b_strength', marginal='kde',
-                    labels={'height_m': 'Height', 'b_strength': 'Biggest Strength'},
-                    title='Histogram of Height per Biggest Strength')
+    fig3 = px.box(final_df, x='height_m', y='b_strength',
+             color='b_strength',
+             labels={'height_m': 'Height', 'b_strength': 'Biggest Strength'},
+             title='Boxplot of Height per Biggest Strength')
     st.plotly_chart(fig3)
 
     # Points vs Performance
