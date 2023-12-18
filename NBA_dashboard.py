@@ -20,6 +20,10 @@ with st.sidebar:
     # Warning message
     st.info("Be aware that results come from a sample of NBA players from season 2023")
 
+    # Abbreviations
+    with st.expander("Abbreviation Index"):
+        st.markdown("points: Points scored per game.  min - Minutes  fgp - Field Goal Percentage  ftp - Free Throw Percentage  tpp - Three-Point Percentage  TotReb - Total Rebounds  Assists: Number of passes so teammate scores  PFouls - Personal Fouls  Steals: Take the ball from an opponent  Turnovers: Lose possession of the ball  Blocks: Deflect or stop a field goal attempt by an opponent  PlusMinus: Point differential when a player is on the court")
+
 # Header 1
 st.header('Explore the Positions')
 
