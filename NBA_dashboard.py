@@ -79,7 +79,7 @@ result_df = final_df.groupby(['height_m']).agg({
     'assists': 'mean',
     'steals': 'mean',
     'blocks': 'mean',
-    'b_strength': lambda x: statistics.mode(x).mode[0]
+    'b_strength': lambda x: statistics.mode(x) if len(x) > 1 else x.iloc[0]
 }).reset_index()
 
 # Function that find closest height and outputs a filtered table with that height
