@@ -119,6 +119,10 @@ else:
     columns_to_round_up = ['points', 'min', 'totReb', 'assists', 'steals', 'blocks']
     skills[columns_to_round_up] = np.ceil(skills[columns_to_round_up])
 
+    #Round to to decimal values
+    columns_to_round_up = ['fgp', 'ftp', 'tpp']
+    skills[columns_to_round_up] = round(skills[columns_to_round_up], 2)
+
     # Remove height column and make table vertical
     skills = skills.drop('height_m', axis=1).T
 
