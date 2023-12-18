@@ -38,7 +38,7 @@ p_n = {
 strengths_df=final_df[final_df['pos'] == pos1]
 
 # Show barplot
-fig = px.histogram(strengths_df, x='b_strength', title=p_n[pos1], labels={'b_strength': '', 'count': 'Count'}, color_discrete_sequence=px.colors.qualitative.Set2)
+fig = px.histogram(strengths_df, x='b_strength', title=f'{p_n[pos1]} Skills', labels={'b_strength': '', 'count': 'Players Count'}, color_discrete_sequence=px.colors.qualitative.Set2)
 st.plotly_chart(fig)
 
 #Divide in to columns
@@ -68,7 +68,7 @@ height = col4.slider('Select your height', min_value=1.5, max_value=2.2, value=1
 result_df = final_df[(final_df['pos'] == pos1) & (final_df['performance'] == perf)]
 
 # Group by hieght
-result_df = final_df.groupby(['height_m']).agg({
+result_df = result_df.groupby(['height_m']).agg({
     'points': 'mean',
     'min': 'mean',
     'fgp': 'mean',
@@ -77,7 +77,8 @@ result_df = final_df.groupby(['height_m']).agg({
     'totReb': 'mean',
     'assists': 'mean',
     'steals': 'mean',
-    'blocks': 'mean'
+    'blocks': 'mean',
+    'b_strength': lambda x: mode(x)
 }).reset_index()
 
 # Function that find closest height and outputs a filtered table with that height
@@ -125,4 +126,4 @@ else:
     skills.rename(columns={skills.columns[0]: 'Average Value per Game'}, inplace=True)
 
     # Show table
-    st.table(skills, width='100%')
+    st.table(skills)
