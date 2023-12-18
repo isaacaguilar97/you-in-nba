@@ -155,3 +155,30 @@ else:
 
     # Show table
     st.table(skills)
+
+with st.expander("Explore a little more"):
+##### Data Information #####
+    st.header('Interesting Data Insights')
+
+    # Position Count
+    pos_counts = final_df['pos'].value_counts().reset_index()
+    pos_counts.columns = ['Position', 'Frequency']
+    fig2 = px.bar(pos_counts, x='Position', y='Frequency', labels={'Position': 'Positions', 'Frequency': 'Frequency'}, 
+                title='Position Count in Data', color_discrete_sequence=px.colors.sequential.Viridis)
+    st.plotly_chart(fig2)
+
+    # Biggest Strengths Distribution per Position
+    fig3 = px.histogram(final_df, x='height_m', color='b_strength', marginal='kde', nbins=30,
+                    labels={'height_m': 'Height', 'b_strength': 'Biggest Strength'},
+                    title='Histogram of Height per Biggest Strength')
+    st.plotly_chart(fig3)
+
+    # Points vs Performance
+    fig4 = px.scatter(final_df, x='plusMinus', y='points', title='Scatter Plot of Points vs Performance',
+                    labels={'plusMinus': 'Performance', 'points': 'Points'})
+    st.plotly_chart(fig4)
+
+# Final Words
+st.markdown('Hope you enjoyed this dashboard, and were able to learn a little more about NBA players and yourself. If you want to learn more about the code I used for this dashboard, you can got to my [GitHub Repository](https://github.com/isaacaguilar97/you-in-nba). You can also go to learn more about the Exploratory Data Analysis that helped me build this Dashboard with my article in my Blog called [My NBA Exploratory Data Analysis](https://isaacaguilar97.github.io/my-blog/My-NBA-Exploratory-Data-Analysis)')
+
+st.write('Thank you for exploring this Data with me. Now you know what it will take you to become an NBA player! :basketball:')

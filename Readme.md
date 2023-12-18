@@ -48,5 +48,5 @@ data: Folder with tables containing saved data from API
 - PlusMinus: The point differential when a player is on the court. It represents the difference between the points scored by the player's team and the points scored by the opposing team while the player is in the game.
 
 ## BLOGPOSTS  
-Data Collection and Cleaning  
-Exploratory Data Analysis  
+[Data Collection and Cleaning](https://isaacaguilar97.github.io/my-blog/NBA-Data-Extraction-and-Cleaning)  
+[Exploratory Data Analysis](https://isaacaguilar97.github.io/my-blog/My-NBA-Exploratory-Data-Analysis) 

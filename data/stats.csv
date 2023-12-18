@@ -14,9 +14,9 @@ id,name,team,pos,game,points,min,fgm,fga,fgp,ftm,fta,ftp,tpm,tpa,tpp,offReb,defR
 246,Richaun Holmes,DAL,F,12,3,11,1,2,0.44,0,1,0.17,0,0,0.0,1,2,4,0,2,0,1,0,-1,average,0.67,fgp,pFouls
 248,Al Horford,BOS,C,21,7,26,3,6,0.47,1,1,0.24,1,3,0.36,1,5,6,3,2,0,1,1,5,high,0.67,totReb,pFouls
 254,RJ Hunter,CHA,G,3,1,6,0,4,0.05,0,0,0.0,0,2,0.08,0,2,2,0,0,0,0,0,-11,low,1.0,totReb,fgp
-261,Kyrie Irving,DAL,PG,16,23,33,9,19,0.45,3,4,0.92,3,7,0.35,1,4,4,6,2,1,1,0,2,average,0.67,assists,pFouls
+261,Kyrie Irving,DAL,PG,16,23,33,9,19,0.45,3,4,0.92,3,7,0.35,1,4,4,6,2,1,1,0,2,average,0.67,ftp,pFouls
 264,Reggie Jackson,DEN,PG,25,13,25,5,11,0.49,1,1,0.29,2,4,0.43,0,2,2,4,2,1,2,0,1,average,0.33,tpp,turnovers
-279,Nikola Jokic,DEN,C,24,27,32,11,19,0.58,4,6,0.7,1,4,0.32,3,9,12,9,3,1,3,1,7,high,0.0,assists,turnovers
+279,Nikola Jokic,DEN,C,24,27,32,11,19,0.58,4,6,0.7,1,4,0.32,3,9,12,9,3,1,3,1,7,high,0.0,totReb,turnovers
 281,Damian Jones,CLE,C,14,2,8,1,1,0.3,1,1,0.11,0,0,0.0,1,1,2,0,1,0,1,0,-1,average,0.67,totReb,tpp
 283,Derrick Jones Jr.,DAL,SF,21,9,22,3,7,0.44,1,1,0.42,2,4,0.36,1,2,3,1,1,1,1,1,0,average,0.67,tpp,assists
 286,DeAndre Jordan,DEN,C,1,5,14,2,3,0.61,1,3,0.11,0,0,0.0,1,3,4,2,2,1,1,0,-5,low,0.67,fgp,pFouls
@@ -33,7 +33,7 @@ id,name,team,pos,game,points,min,fgm,fga,fgp,ftm,fta,ftp,tpm,tpa,tpp,offReb,defR
 2110,Oshae Brissett,BOS,SF,14,2,13,1,3,0.14,1,2,0.38,0,1,0.05,1,2,3,0,1,0,0,0,0,average,1.0,ftp,fgp
 2115,Amir Coffey,LAC,SG,14,2,9,1,2,0.11,1,1,0.31,0,1,0.05,0,1,1,1,1,0,0,0,1,average,1.0,ftp,fgp
 2325,Armoni Brooks,BKN,G,10,4,9,2,4,0.34,0,0,0.0,1,3,0.27,0,2,2,0,0,0,0,0,4,high,1.0,tpp,ftp
-2392,Dean Wade,CLE,PF,20,5,21,2,4,0.37,0,0,0.12,1,3,0.35,1,3,4,1,2,1,1,0,1,average,0.75,steals,pFouls
+2392,Dean Wade,CLE,PF,20,5,21,2,4,0.37,0,0,0.12,1,3,0.35,1,3,4,1,2,1,1,0,1,average,0.75,tpp,pFouls
 2557,Jontay Porter,DET,C,1,2,9,1,2,0.5,0,0,0.0,0,1,0.0,2,0,2,0,1,0,0,2,3,average,1.0,fgp,ftp
 2566,LaMelo Ball,CHA,PG,19,23,31,8,18,0.42,3,4,0.78,3,8,0.35,1,4,5,7,3,1,4,0,-3,low,0.0,assists,turnovers
 2569,Saddiq Bey,ATL,SF,25,13,29,5,9,0.52,2,2,0.54,2,5,0.4,2,4,6,1,1,1,1,0,2,average,0.75,tpp,assists
@@ -88,7 +88,7 @@ id,name,team,pos,game,points,min,fgm,fga,fgp,ftm,fta,ftp,tpm,tpa,tpp,offReb,defR
 801,Jonathan Isaac,ORL,PF,20,6,13,2,5,0.38,1,2,0.51,1,2,0.22,1,3,4,0,1,1,1,1,4,high,,steals,assists
 814,Luke Kennard,MEM,SG,12,7,20,2,7,0.33,1,1,0.42,2,5,0.31,0,2,2,2,0,0,1,0,-2,average,,tpp,totReb
 817,Maxi Kleber,DAL,PF,7,3,17,1,3,0.29,1,2,0.36,1,2,0.15,1,3,4,1,1,0,1,0,-2,average,,totReb,fgp
-818,Furkan Korkmaz,PHI,SG,19,2,8,1,2,0.25,0,1,0.29,0,1,0.2,0,1,1,1,1,1,0,0,2,average,,steals,fgp
+818,Furkan Korkmaz,PHI,SG,19,2,8,1,2,0.25,0,1,0.29,0,1,0.2,0,1,1,1,1,1,0,0,2,average,,steals,totReb
 819,Luke Kornet,BOS,C,21,4,13,2,2,0.63,1,1,0.35,0,0,0.0,1,2,3,1,1,0,1,1,-1,average,,fgp,tpp
 820,Kyle Kuzma,WAS,SF,26,23,30,9,19,0.49,3,4,0.64,2,6,0.37,1,5,6,4,2,0,2,1,-8,low,,assists,turnovers
 830,Lauri Markkanen,UTA,PF,21,22,30,8,15,0.5,4,5,0.72,3,7,0.39,2,6,8,1,2,1,1,1,-3,low,,totReb,pFouls
@@ -107,3 +107,13 @@ id,name,team,pos,game,points,min,fgm,fga,fgp,ftm,fta,ftp,tpm,tpa,tpp,offReb,defR
 934,Keita Bates-Diop,PHX,SF,27,5,18,2,5,0.4,1,1,0.44,0,2,0.2,1,2,3,1,1,1,0,1,-1,average,,steals,assists
 940,Mikal Bridges,BKN,SF,28,21,34,8,16,0.47,4,4,0.74,2,6,0.4,1,4,5,4,2,1,2,0,0,average,,ftp,turnovers
 941,Miles Bridges,CHA,SF,14,20,36,7,16,0.47,3,4,0.75,2,6,0.41,1,6,7,2,2,1,2,0,-8,low,,ftp,turnovers
+944,Bruce Brown,IND,SF,29,11,29,4,9,0.43,2,2,0.43,1,4,0.22,1,4,4,3,2,1,1,0,3,average,,steals,pFouls
+945,Troy Brown Jr.,MIN,SF,24,6,16,2,5,0.38,1,1,0.22,1,3,0.28,1,2,3,1,1,0,1,0,3,average,,tpp,ftp
+946,Jalen Brunson,NYK,PG,28,24,34,8,18,0.46,4,6,0.74,3,6,0.4,1,3,4,6,2,1,2,0,3,average,,assists,turnovers
+947,Deonte Burton,SAC,F,1,0,7,0,2,0.0,0,0,0.0,0,0,0.0,0,0,0,1,0,1,0,0,9,high,,steals,fgp
+949,Jevon Carter,CHI,PG,32,5,15,2,5,0.32,0,0,0.06,1,3,0.34,0,1,1,1,1,1,1,0,-1,average,,steals,ftp
+950,Wendell Carter Jr.,ORL,C,8,10,26,3,9,0.36,2,3,0.55,1,4,0.28,2,6,8,2,2,0,2,0,3,average,,totReb,turnovers
+962,Donte DiVincenzo,NYK,SG,29,9,21,3,7,0.41,1,1,0.3,2,5,0.38,1,2,3,2,2,1,1,0,-2,average,,tpp,pFouls
+963,Luka Doncic,DAL,PG,25,32,36,11,23,0.48,6,8,0.81,4,10,0.37,1,7,8,9,2,1,4,0,2,average,,assists,turnovers
+970,Wenyen Gabriel,BOS,F,3,2,8,1,3,0.44,0,1,0.17,0,0,0.0,1,1,3,0,3,0,1,0,-1,average,,fgp,pFouls
+972,Shai Gilgeous-Alexander,OKC,PG,25,29,34,11,20,0.54,7,8,0.87,1,3,0.35,1,5,5,6,2,3,2,1,9,high,,steals,turnovers
