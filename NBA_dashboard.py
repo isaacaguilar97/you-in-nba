@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import plotly.express as px
-from scipy.stats import mode
+from statistics import mode
 
 # Load Data
 final_df = pd.read_csv('data/final_table.csv')
