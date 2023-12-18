@@ -164,11 +164,11 @@ with st.expander("Explore a little more"):
     pos_counts = final_df['pos'].value_counts().reset_index()
     pos_counts.columns = ['Position', 'Frequency']
     fig2 = px.bar(pos_counts, x='Position', y='Frequency', labels={'Position': 'Positions', 'Frequency': 'Frequency'}, 
-                title='Position Count in Data', color_discrete_sequence=px.colors.sequential.Viridis)
+                title='Position Count', color_discrete_sequence=px.colors.sequential.Viridis)
     st.plotly_chart(fig2)
 
     # Biggest Strengths Distribution per Position
-    fig3 = px.histogram(final_df, x='height_m', color='b_strength', marginal='kde', nbins=30,
+    fig3 = px.histogram(final_df, x='height_m', color='b_strength', marginal='kde',
                     labels={'height_m': 'Height', 'b_strength': 'Biggest Strength'},
                     title='Histogram of Height per Biggest Strength')
     st.plotly_chart(fig3)
