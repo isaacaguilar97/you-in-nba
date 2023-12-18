@@ -7,20 +7,21 @@ import statistics
 # Load Data
 final_df = pd.read_csv('data/final_table.csv')
 
-# App Title
-st.title('Your spot in the NBA')
+with st.sidebar:
+    # App Title
+    st.title('Your spot in the NBA')
 
-# Description
-st.markdown('Imagine you where an NBA player. What position would you like to be? What skills would you need to have based on your position and hieght. If you ever have wondered these questions or would like to just improve your game through some benchmarks that help you know what your skills should look like to be an above average baller, this app is for you. Hope you enjoy it.')
+    # Description
+    st.markdown('Imagine you where an NBA player. What position would you like to be? What skills would you need to have based on your position and hieght. If you ever have wondered these questions or would like to just improve your game through some benchmarks that help you know what your skills should look like to be an above average baller, this app is for you. Hope you enjoy it.')
 
-# Warning message the results are comming from a sample of NBA players from 2023 season
+    # Position Input
+    pos1 = st.selectbox("Select Position", final_df['pos'].unique().tolist())
+    
+    # Warning message
+    st.info("Be aware that results come from a sample of NBA players from season 2023")
 
 # Header 1
 st.header('Explore the Positions')
-
-# Position Input
-pos1 = st.sidebar.selectbox("Select Position", final_df['pos'].unique().tolist())
-# Have one selected by default or prompt to select one (Make it required)
 
 # Positions Dictionary
 p_n = {
@@ -60,10 +61,8 @@ st.markdown('Now that you have idenitfied what position you like the most, explo
 
 #Input
 col3, col4 = st.columns(2)
-#pos2 = col3.selectbox("Role", final_df['pos'].unique().tolist())
 perf = col3.selectbox("Select Performance", final_df[final_df['pos'] == pos1]['performance'].unique().tolist())
 height = col4.slider('Select your height', min_value=1.5, max_value=2.2, value=1.75, step=0.01)
-
 
 # Filter position and performance
 result_df = final_df[(final_df['pos'] == pos1) & (final_df['performance'] == perf)]
