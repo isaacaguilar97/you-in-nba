@@ -7,6 +7,26 @@ from statistics import mode
 # Load Data
 final_df = pd.read_csv('data/final_table.csv')
 
+# Prep Abbreviation table
+abb = {
+    'Metric': ['Points', 'Minutes', 'Field Goal Percentage', 'Free Throw Percentage', 'Three-Point Percentage', 
+               'Total Rebounds', 'Assists', 'Personal Fouls', 'Steals', 'Turnovers', 'Blocks', 'Plus-Minus'],
+    'Description': [
+        'Points scored per game.',
+        'Minutes played per game.',
+        'Percentage of field goals made.',
+        'Percentage of free throws made.',
+        'Percentage of three-pointers made.',
+        'Total number of rebounds.',
+        "Number of passes leading to a teammate's score.",
+        'Personal fouls committed.',
+        'Number of times the player takes the ball from an opponent.',
+        'Number of times the player loses possession of the ball.',
+        'Number of times the player deflects or stops a field goal attempt by an opponent.',
+        'Point differential when the player is on the court.'
+    ]
+}
+
 with st.sidebar:
     # App Title
     st.title('Your spot in the NBA')
@@ -22,7 +42,7 @@ with st.sidebar:
 
     # Abbreviations
     with st.expander("Abbreviation Index"):
-        st.markdown("points: Points scored per game.  min - Minutes  fgp - Field Goal Percentage  ftp - Free Throw Percentage  tpp - Three-Point Percentage  TotReb - Total Rebounds  Assists: Number of passes so teammate scores  PFouls - Personal Fouls  Steals: Take the ball from an opponent  Turnovers: Lose possession of the ball  Blocks: Deflect or stop a field goal attempt by an opponent  PlusMinus: Point differential when a player is on the court")
+        st.table(abb)
 
 # Header 1
 st.header('Explore the Positions')
