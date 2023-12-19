@@ -49,5 +49,5 @@ data: Folder with tables containing saved data from API
 
 ## BLOGPOSTS  
 [Data Collection and Cleaning](https://isaacaguilar97.github.io/my-blog/NBA-Data-Extraction-and-Cleaning)  
-[Exploratory Data Analysis](https://isaacaguilar97.github.io/my-blog/My-NBA-Exploratory-Data-Analysis) 
+[Exploratory Data Analysis](https://isaacaguilar97.github.io/my-blog/My-NBA-Exploratory-Data-Analysis)  
 [Streamlit App](https://you-in-nba-lxpiw.streamlit.app/)
