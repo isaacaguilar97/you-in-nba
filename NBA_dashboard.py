@@ -94,7 +94,7 @@ perf = col3.selectbox("Select Performance", final_df[final_df['pos'] == pos1]['p
 if h == 'meters':
     height = col4.slider('Select your height', min_value=1.5, max_value=2.2, value=1.75, step=0.01)
 else:
-    height = col4.slider('Select your height', min_value=65.0, max_value=78.5, value=86.0, step=0.5)
+    height = col4.slider('Select your height', min_value=65.0, max_value=86.0, value=78.5, step=0.5)
 
 # Filter position and performance
 result_df = final_df[(final_df['pos'] == pos1) & (final_df['performance'] == perf)]
