@@ -42,12 +42,12 @@ with st.sidebar:
     h = st.selectbox("Select Height Unit", ['inches', 'meters'])
     unit_dic = {'inches': 'height_in', 'meters': 'height_m'}
 
+    # Warning message
+    st.info("Be aware that results come from a sample of NBA players from season 2023")
+
     # Abbreviations
     with st.expander("Abbreviation Index"):
         st.table(abb)
-
-    # Warning message
-    st.info("Be aware that results come from a sample of NBA players from season 2023")
 
 # Header 1
 st.header('Explore the Positions')
@@ -94,7 +94,7 @@ perf = col3.selectbox("Select Performance", final_df[final_df['pos'] == pos1]['p
 if h == 'meters':
     height = col4.slider('Select your height', min_value=1.5, max_value=2.2, value=1.75, step=0.01)
 else:
-    height = col4.slider('Select your height', min_value=65.0, max_value=78.55, value=87, step=0.05)
+    height = col4.slider('Select your height', min_value=65.00, max_value=78.55, value=87.00, step=0.05)
 
 # Filter position and performance
 result_df = final_df[(final_df['pos'] == pos1) & (final_df['performance'] == perf)]
