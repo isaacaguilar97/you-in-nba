@@ -1,5 +1,5 @@
 ## PROJECT DESCRIPTION  
-The purpose of this project is to create a Dashboard in Streamlit that helps anyone interested in improving their basketball skills, know where to focus their training based on their height, weight, and current skills compared to the 2023 NBA players.  
+The purpose of this project is to create a Dashboard in Streamlit that helps anyone interested in improving their basketball skills, know where to focus their training based on their height, desired position, and desired performance.  
 
  ## CONTENT  
 NBA_project.ipynb: Where all the code resides  
@@ -50,3 +50,4 @@ data: Folder with tables containing saved data from API
 ## BLOGPOSTS  
 [Data Collection and Cleaning](https://isaacaguilar97.github.io/my-blog/NBA-Data-Extraction-and-Cleaning)  
 [Exploratory Data Analysis](https://isaacaguilar97.github.io/my-blog/My-NBA-Exploratory-Data-Analysis) 
+[Streamlit App](https://you-in-nba-lxpiw.streamlit.app/)
