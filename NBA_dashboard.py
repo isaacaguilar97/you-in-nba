@@ -9,9 +9,10 @@ final_df = pd.read_csv('data/final_table.csv')
 
 # Prep Abbreviation table
 abb = {
-    'Metric': ['points', 'mins', 'fgp', 'ftp', 'tpp', 
+    'Metric': ['PF','SG','C','PG','SF','F','G','points', 'mins', 'fgp', 'ftp', 'tpp', 
                'totReb', 'assists', 'pFouls', 'steals', 'turnovers', 'blocks', 'plusMinus'],
     'Description': [
+        'Power Forward','Shooting Guard','Center','Point Guard', 'Small Forward','Forward','Guard',
         'Points scored per game.',
         'Minutes played per game.',
         'Percentage of field goals made.',
@@ -24,7 +25,7 @@ abb = {
         'Number of times the player loses possession of the ball.',
         'Number of times the player deflects or stops a field goal attempt by an opponent.',
         'Point differential when the player is on the court.'
-    ]
+        ]
 }
 
 with st.sidebar:
@@ -36,6 +37,10 @@ with st.sidebar:
 
     # Position Input
     pos1 = st.selectbox("Select Position", final_df['pos'].unique().tolist())
+
+    # Height unit
+    h = st.selectbox("Select Height Unit", ['inches', 'meters'])
+    unit_dic = {'inches': 'height_in', 'meters': 'height_m'}
     
     # Warning message
     st.info("Be aware that results come from a sample of NBA players from season 2023")
@@ -70,9 +75,9 @@ col1, col2 = st.columns(2)
 
 # Show metrics ##
 # Height Range
-Min = strengths_df['height_m'].min()
-Max = strengths_df['height_m'].max()
-col1.metric(label="Height Range in meters:", value=f'{Min} - {Max}')
+Min = strengths_df[unit_dic[h]].min()
+Max = strengths_df[unit_dic[h]].max()
+col1.metric(label=f"Height Range in {h}:", value=f'{Min} - {Max}')
 # Average of Minutes played in a game
 col2.metric(label="Average minutes on the Court", value=round(strengths_df['min'].mean()))
 
@@ -106,24 +111,24 @@ result_df = result_df.groupby(['height_m']).agg({
 }).reset_index()
 
 # Function that find closest height and outputs a filtered table with that height
-def find_closest_height(df, target_height=1.77, tolerance=0.01):
+def find_closest_height(df, target_height, tolerance=0.01):
     # Check if the target height is present in the DataFrame
-    if target_height in df['height_m'].values:
-        return df[df['height_m'] == target_height]
+    if target_height in df[unit_dic[h]].values:
+        return df[df[unit_dic[h]] == target_height]
     
     # If not, find the closest height within the specified tolerance
     lower_height = target_height - tolerance
     upper_height = target_height + tolerance
     
     # Check if there are observations for the lower and upper heights
-    lower_obs = df[(df['height_m'] >= lower_height) & (df['height_m'] <= target_height)]
-    upper_obs = df[(df['height_m'] <= upper_height) & (df['height_m'] >= target_height)]
+    lower_obs = df[(df[unit_dic[h]] >= lower_height) & (df[unit_dic[h]] <= target_height)]
+    upper_obs = df[(df[unit_dic[h]] <= upper_height) & (df[unit_dic[h]] >= target_height)]
     
     # If both lower and upper observations are empty, and target_height is greater than max height, handle it
     if lower_obs.empty and upper_obs.empty:
-        max_height = df['height_m'].max()
+        max_height = df[unit_dic[h]].max()
         if target_height > max_height:
-            return df[df['height_m'] == max_height]
+            return df[df[unit_dic[h]] == max_height]
         else:
             return find_closest_height(df, target_height + 0.01, tolerance)
     
@@ -148,7 +153,7 @@ else:
     skills[columns_to_round_up] = round(skills[columns_to_round_up], 2)
 
     # Remove height column and make table vertical
-    skills = skills.drop('height_m', axis=1).T
+    skills = skills.drop(unit_dic[h], axis=1).T
 
     # Rename column
     skills.rename(columns={skills.columns[0]: 'Average Value per Game'}, inplace=True)
@@ -168,16 +173,16 @@ with st.expander("Explore a little more"):
     st.plotly_chart(fig2)
 
     # Biggest Strengths Distribution per Position
-    fig3 = px.box(final_df, x='pos', y='height_m',
+    fig3 = px.box(final_df, x='pos', y=unit_dic[h],
              color='pos',
-             labels={'pos': 'Position', 'height_m': 'Height (meters)'},
+             labels={'pos': 'Position', unit_dic[h]: f'Height ({h})'},
              title='Boxplot of Height per Position')
     st.plotly_chart(fig3)
 
     # Biggest Strengths Distribution per Position
-    fig4 = px.box(final_df, x='height_m', y='b_strength',
+    fig4 = px.box(final_df, x=unit_dic[h], y='b_strength',
              color='b_strength',
-             labels={'height_m': 'Height', 'b_strength': 'Biggest Strength'},
+             labels={unit_dic[h]: 'Height', 'b_strength': 'Biggest Strength'},
              title='Boxplot of Height per Biggest Strength')
     st.plotly_chart(fig4)
 
