@@ -97,7 +97,7 @@ height = col4.slider('Select your height', min_value=1.5, max_value=2.2, value=1
 result_df = final_df[(final_df['pos'] == pos1) & (final_df['performance'] == perf)]
 
 # Group by hieght
-result_df = result_df.groupby(['height_m']).agg({
+result_df = result_df.groupby([unit_dic[h]]).agg({
     'points': 'mean',
     'min': 'mean',
     'fgp': 'mean',
