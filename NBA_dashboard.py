@@ -9,8 +9,8 @@ final_df = pd.read_csv('data/final_table.csv')
 
 # Prep Abbreviation table
 abb = {
-    'Metric': ['Points', 'Minutes', 'Field Goal Percentage', 'Free Throw Percentage', 'Three-Point Percentage', 
-               'Total Rebounds', 'Assists', 'Personal Fouls', 'Steals', 'Turnovers', 'Blocks', 'Plus-Minus'],
+    'Metric': ['points', 'mins', 'fgp', 'ftp', 'tpp', 
+               'totReb', 'assists', 'pFouls', 'steals', 'turnovers', 'blocks', 'plusMinus'],
     'Description': [
         'Points scored per game.',
         'Minutes played per game.',
@@ -168,16 +168,23 @@ with st.expander("Explore a little more"):
     st.plotly_chart(fig2)
 
     # Biggest Strengths Distribution per Position
-    fig3 = px.box(final_df, x='height_m', y='b_strength',
+    fig3 = px.box(final_df, x='pos', y='height_m',
+             color='pos',
+             labels={'pos': 'Position', 'height_m': 'Height (meters)'},
+             title='Boxplot of Height per Position')
+    st.plotly_chart(fig3)
+
+    # Biggest Strengths Distribution per Position
+    fig4 = px.box(final_df, x='height_m', y='b_strength',
              color='b_strength',
              labels={'height_m': 'Height', 'b_strength': 'Biggest Strength'},
              title='Boxplot of Height per Biggest Strength')
-    st.plotly_chart(fig3)
+    st.plotly_chart(fig4)
 
     # Points vs Performance
-    fig4 = px.scatter(final_df, x='plusMinus', y='points', title='Scatter Plot of Points vs Performance',
+    fig5 = px.scatter(final_df, x='plusMinus', y='points', title='Scatter Plot of Points vs Performance',
                     labels={'plusMinus': 'Performance', 'points': 'Points'})
-    st.plotly_chart(fig4)
+    st.plotly_chart(fig5)
 
 # Final Words
 st.markdown('Hope you enjoyed this dashboard, and were able to learn a little more about NBA players and yourself. If you want to learn more about the code I used for this dashboard, you can got to my [GitHub Repository](https://github.com/isaacaguilar97/you-in-nba). You can also go to learn more about the Exploratory Data Analysis that helped me build this Dashboard with my article in my Blog called [My NBA Exploratory Data Analysis](https://isaacaguilar97.github.io/my-blog/My-NBA-Exploratory-Data-Analysis)')
