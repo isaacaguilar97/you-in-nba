@@ -6,3 +6,9 @@ Sam Lee:
 Hey Isaac, I loved your dashboard! I loved the organization and how yo explained everything throughout. 
 I also liked how you themed everything about comparing ourselves to real NBA players. It's a neat idea. 
 A couple of things I would suggest would be to add the player postion acronymns to your table as well where you explain what the words mean--just for no-basketball audiences. Additionally, it could be nice to have a button to switch between meters/inches for the height, just so we accommodate both American and global audiences.
+
+Brandon Wegrowski:
+Streamlit: Love the app! Really engaging approach to have the user imagine themselves as an NBA player and explore the data from that perspective. 
+The sidebar is great too (especially the abbreviation index - very helpful!)
+
+I really liked the feedback I was given. Because of it, I was able to provide value to a broader audience, and fixed any bzugs I had.
